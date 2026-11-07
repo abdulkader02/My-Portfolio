@@ -3,21 +3,26 @@ import { profileData } from "@/data/profile";
 import { SocialLinks } from "@/components/shared/SocialLinks";
 
 /**
- * Footer Component (Phase 1 Structural Placeholder)
- * Planned responsibility:
- * - Dynamic copyright notice with developer name
- * - Social link icons aligned to the right
+ * Global Footer Component
+ * Clean, minimal footer matching Reference 1:
+ * - Left: "© {year} {profileData.name}. All rights reserved."
+ * - Right: Verified social links (GitHub, LinkedIn, Email).
  */
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-border py-8 text-sm text-muted-foreground">
-      <div className="container mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6">
-        <p>
+    <footer className="w-full border-t border-border/50 py-8 transition-colors">
+      <div className="container mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 sm:flex-row sm:px-8 lg:px-12">
+        {/* Left: Minimal Copyright */}
+        <p className="text-xs sm:text-sm text-muted-foreground">
           &copy; {currentYear} {profileData.name}. All rights reserved.
         </p>
-        <SocialLinks />
+
+        {/* Right: Verified Social Links */}
+        <div className="flex items-center gap-5">
+          <SocialLinks />
+        </div>
       </div>
     </footer>
   );

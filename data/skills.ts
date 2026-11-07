@@ -17,8 +17,8 @@ export const skillCategories: SkillCategory[] = [
     category: "Frontend",
     description: "Building responsive, modern, and accessible user interfaces.",
     skills: [
-      { name: "HTML", category: "Frontend", proficiencyLevel: "Working Knowledge" },
-      { name: "CSS", category: "Frontend", proficiencyLevel: "Working Knowledge" },
+      { name: "HTML5", category: "Frontend", proficiencyLevel: "Working Knowledge" },
+      { name: "CSS3", category: "Frontend", proficiencyLevel: "Working Knowledge" },
       { name: "JavaScript", category: "Frontend", proficiencyLevel: "Working Knowledge" },
       { name: "TypeScript", category: "Frontend", proficiencyLevel: "Working Knowledge" },
       { name: "React.js", category: "Frontend", proficiencyLevel: "Working Knowledge" },

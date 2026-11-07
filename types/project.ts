@@ -9,5 +9,6 @@ export interface Project {
   githubUrl: string | null;
   thumbnail: string;
   features: string[];
+  overview?: string;
   isPendingVerification?: boolean;
 }

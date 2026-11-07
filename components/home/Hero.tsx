@@ -5,56 +5,66 @@ import { profileData } from "@/data/profile";
 import { ArrowRight } from "lucide-react";
 
 /**
- * Hero Component (Phase 1 Structural Placeholder)
- * Planned responsibility:
- * - Two-column desktop / stacked mobile layout
- * - Category tagline ("DEVELOPMENT | DESIGN | STRATEGY")
- * - Confident headline & verified short introduction
- * - Primary CTA ("View Resume") and Secondary CTA ("Let's Talk")
- * - Circular profile portrait from /images/profile/portrait.png
+ * Hero Component (Home Page)
+ * Directly matches the approved Reference 1 layout:
+ * - Left column:
+ *   - Plain text blue eyebrow: DEVELOPMENT | DESIGN | STRATEGY
+ *   - Confident two-line headline: Hi, I'm Abdul / Kader.
+ *   - Balanced paragraph introduction
+ *   - Pill CTA button pair: "View Resume →" and "Let's Talk"
+ * - Right column:
+ *   - Clean circular portrait cutout with ambient drop shadow
  */
 export function Hero() {
   return (
-    <section className="py-12 md:py-24">
-      <div className="container mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12">
-          {/* Left Column: Intro & CTAs */}
-          <div className="flex flex-col items-start gap-6 md:col-span-7">
-            <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
-              DEVELOPMENT &bull; DESIGN &bull; ARCHITECTURE
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-              Hi, I&apos;m {profileData.name}.
+    <section className="relative overflow-hidden py-8 sm:py-12 md:py-16 lg:py-20">
+      <div className="container mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
+          {/* Left Column: Introduction & Call-to-Actions */}
+          <div className="flex flex-col items-start lg:col-span-7">
+            {/* Category Eyebrow */}
+            <div className="text-xs sm:text-sm font-bold tracking-[0.22em] uppercase text-blue-600 dark:text-blue-500">
+              DEVELOPMENT | DESIGN | STRATEGY
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-[4.75rem] lg:leading-[1.08]">
+              Hi, I&apos;m Abdul<br className="hidden sm:inline" />
+              Kader<span className="text-foreground">.</span>
             </h1>
-            <p className="max-w-xl text-base text-muted-foreground sm:text-lg">
-              {profileData.shortBio}
+
+            {/* Bio Introduction */}
+            <p className="mt-6 mb-8 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
+              A full-stack developer passionate about building fast, accessible, and responsive digital products. Welcome to my portfolio.
             </p>
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/resume"
-                className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-foreground px-7 py-3.5 text-sm sm:text-base font-semibold text-background shadow-md transition-all duration-200 hover:opacity-90 active:scale-95"
               >
-                View Resume
-                <ArrowRight className="h-4 w-4" />
+                <span>View Resume</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                className="inline-flex items-center rounded-full border border-border/80 bg-background px-7 py-3.5 text-sm sm:text-base font-semibold text-foreground shadow-2xs transition-colors duration-200 hover:bg-muted/60 active:scale-95"
               >
                 Let&apos;s Talk
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Circular Profile Portrait */}
-          <div className="flex justify-center md:col-span-5 md:justify-end">
-            <div className="relative aspect-square w-64 overflow-hidden rounded-full border-2 border-border shadow-xl sm:w-72 md:w-80">
+          {/* Right Column: Clean Circular Portrait Cutout */}
+          <div className="flex justify-center lg:col-span-5 lg:justify-end">
+            <div className="relative aspect-square w-72 sm:w-84 md:w-96 lg:w-[410px] overflow-hidden rounded-full shadow-[0_25px_60px_-15px_rgba(0,0,0,0.18)] dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] ring-1 ring-border/30">
               <Image
                 src={profileData.portrait}
                 alt={profileData.name}
                 fill
                 priority
-                sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, 320px"
+                sizes="(max-width: 640px) 288px, (max-width: 1024px) 384px, 410px"
                 className="object-cover"
               />
             </div>

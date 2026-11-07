@@ -1,75 +1,43 @@
 import React from "react";
 import { profileData } from "@/data/profile";
-import { skillCategories } from "@/data/skills";
+import { EducationCard } from "@/components/about/EducationCard";
+import { InterestsCard } from "@/components/about/InterestsCard";
+import { SkillsSection } from "@/components/about/SkillsSection";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About | Abdul Kader Khan",
-  description: "About Abdul Kader Khan, education, background, and development focus.",
+  description:
+    "Learn about Abdul Kader Khan, full-stack web developer based in Bangladesh, his academic background, development focus, and verified technical skill stack.",
 };
 
 /**
- * About Page (Phase 1 Minimal Structural Placeholder)
- * Full UI implementation deferred to Phase 2.
+ * About Page (Phase 1.5 UI Refinement & Typography Upgrade)
  */
 export default function AboutPage() {
   return (
     <div className="container mx-auto max-w-5xl px-4 py-12 sm:px-6 md:py-20">
-      <header className="mb-10 space-y-2">
-        <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">
-          Background & Education
+      {/* 1. Introduction Header */}
+      <header className="mb-12 space-y-4 sm:mb-16">
+        <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-500">
+          Background &bull; Education &bull; Arsenal
         </span>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
           About Me
         </h1>
-        <p className="max-w-2xl text-base text-muted-foreground">
+        <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           {profileData.fullBio}
         </p>
       </header>
 
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-        {/* Education Section */}
-        <section className="space-y-4 rounded-xl border border-border p-6">
-          <h2 className="text-lg font-semibold text-foreground">Education</h2>
-          <div className="space-y-1">
-            <h3 className="font-medium text-foreground">
-              {profileData.education.degree} — {profileData.education.field}
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              {profileData.education.institution}, {profileData.education.location}
-            </p>
-            <p className="text-xs text-muted-foreground">
-              Expected Completion: {profileData.education.expectedCompletion} ({profileData.education.status})
-            </p>
-          </div>
-        </section>
-
-        {/* Development Interests */}
-        <section className="space-y-4 rounded-xl border border-border p-6">
-          <h2 className="text-lg font-semibold text-foreground">Development Interests</h2>
-          <ul className="list-inside list-disc space-y-1 text-sm text-muted-foreground">
-            {profileData.developmentInterests.map((interest) => (
-              <li key={interest}>{interest}</li>
-            ))}
-          </ul>
-        </section>
+      {/* 2. Education & Development Interests Grid */}
+      <div className="mb-12 grid grid-cols-1 gap-6 sm:mb-16 lg:grid-cols-2 lg:gap-8">
+        <EducationCard />
+        <InterestsCard />
       </div>
 
-      {/* Skills Summary Placeholder */}
-      <section className="mt-10 space-y-6 rounded-xl border border-border p-6">
-        <h2 className="text-lg font-semibold text-foreground">Skills Overview</h2>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
-          {skillCategories.map((cat) => (
-            <div key={cat.category} className="space-y-2">
-              <h3 className="text-sm font-medium text-foreground">{cat.title}</h3>
-              <ul className="space-y-1 text-xs text-muted-foreground">
-                {cat.skills.map((skill) => (
-                  <li key={skill.name}>{skill.name}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 3. Skills & Technologies Section */}
+      <SkillsSection />
     </div>
   );
 }

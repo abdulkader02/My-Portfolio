@@ -29,14 +29,23 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} | Abdul Kader Khan`,
+    title: `${project.title} — Case Study | Abdul Kader Khan`,
     description: project.description,
+    openGraph: {
+      title: `${project.title} — Project Case Study`,
+      description: project.description,
+      images: [
+        {
+          url: project.thumbnail,
+          alt: project.title,
+        },
+      ],
+    },
   };
 }
 
 /**
- * Project Detail Dynamic Route (Phase 1 Minimal Structural Placeholder)
- * Full UI implementation deferred to Phase 2.
+ * Project Detail Dynamic Route
  */
 export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const { slug } = await params;
