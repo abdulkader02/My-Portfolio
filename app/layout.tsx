@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+// Google Font imports removed due to offline build constraints
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
+// Font imports disabled for offline build
+const inter = { variable: "" };
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  display: "swap",
-});
+
+// Font imports disabled for offline build
+const plusJakartaSans = { variable: "" };
+
 
 export const metadata: Metadata = {
   title: "Abdul Kader Khan | Full-Stack Web Developer",
