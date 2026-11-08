@@ -32,21 +32,32 @@ export function Navbar() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/85 backdrop-blur-md transition-colors border-b border-border/50">
+    <header className="sticky top-0 z-50 w-full bg-background/85 backdrop-blur-md transition-colors border-b border-border">
       <div className="container mx-auto relative flex h-20 max-w-6xl items-center justify-between px-6 sm:px-8 lg:px-12">
         {/* Monogram Brand Logo */}
         <Link
           href="/"
           onClick={closeMobileMenu}
-          className="group flex items-center font-heading text-2xl font-black tracking-tight text-foreground"
+          className="group flex items-center"
           aria-label="Abdul Kader Khan - Home"
         >
+          {/* Dark logo variant for Light Mode */}
           <Image
-            src="/images/profile/logo.png"
+            src="/images/profile/logo-dark.png"
             alt="Abdul Kader Logo"
-            width={90}
-            height={90}
-            className="object-contain"
+            width={95}
+            height={40}
+            priority
+            className="h-8 sm:h-9 w-auto object-contain dark:hidden"
+          />
+          {/* White logo variant for Dark Mode */}
+          <Image
+            src="/images/profile/logo-light.png"
+            alt="Abdul Kader Logo"
+            width={55}
+            height={40}
+            priority
+            className="h-8 sm:h-9 w-auto object-contain hidden dark:block"
           />
         </Link>
 
@@ -69,7 +80,7 @@ export function Navbar() {
                   "text-sm tracking-wide transition-colors duration-150",
                   isActive
                     ? "font-bold text-foreground"
-                    : "font-medium text-muted-foreground hover:text-foreground"
+                    : "font-medium text-slate-600 hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground"
                 )}
               >
                 {link.label}
@@ -120,8 +131,8 @@ export function Navbar() {
                   className={cn(
                     "flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-colors",
                     isActive
-                      ? "bg-muted text-foreground font-semibold border border-border/80"
-                      : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                      ? "bg-slate-100 text-foreground font-semibold border border-border dark:bg-muted"
+                      : "text-slate-600 hover:bg-slate-100/70 hover:text-foreground dark:text-muted-foreground dark:hover:bg-muted/50 dark:hover:text-foreground"
                   )}
                 >
                   <span>{link.label}</span>

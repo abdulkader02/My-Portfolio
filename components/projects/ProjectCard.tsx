@@ -15,11 +15,11 @@ interface ProjectCardProps {
  */
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-card/60 backdrop-blur-xs shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-card hover:shadow-md">
+    <article className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:shadow-md dark:border-border/80 dark:bg-card/60 dark:hover:bg-card">
       {/* 1. Project Thumbnail with Zoom Effect */}
       <Link
         href={`/projects/${project.slug}`}
-        className="relative aspect-video w-full overflow-hidden border-b border-border/60 bg-muted/30 block"
+        className="relative aspect-video w-full overflow-hidden border-b border-border bg-slate-100 dark:bg-muted/30 block"
         tabIndex={-1}
         aria-hidden="true"
       >
@@ -53,7 +53,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </Link>
           </h3>
 
-          <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+          <p className="line-clamp-2 text-sm leading-relaxed text-slate-600 dark:text-muted-foreground">
             {project.description}
           </p>
 
@@ -63,7 +63,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-md border border-border/80 bg-muted/60 px-2.5 py-0.5 text-xs font-medium text-foreground transition-colors group-hover:border-border"
+                  className="rounded-md border border-border bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-700 transition-colors group-hover:border-slate-300 dark:bg-muted/60 dark:text-foreground dark:group-hover:border-border"
                 >
                   {tech}
                 </span>
@@ -73,7 +73,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* 3. Action Buttons & Direct Links */}
-        <div className="mt-6 flex items-center justify-between border-t border-border/60 pt-4 text-xs font-semibold">
+        <div className="mt-6 flex items-center justify-between border-t border-border pt-4 text-xs font-semibold">
           <div className="flex items-center gap-3">
             {project.liveUrl && (
               <a
@@ -93,7 +93,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
+                className="inline-flex items-center gap-1.5 text-slate-600 hover:text-foreground dark:text-muted-foreground transition-colors"
                 aria-label={`View source code for ${project.title} on GitHub`}
               >
                 <GithubIcon className="h-3.5 w-3.5" />
@@ -104,7 +104,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
           <Link
             href={`/projects/${project.slug}`}
-            className="group/btn inline-flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+            className="group/btn inline-flex items-center gap-1 text-slate-600 hover:text-blue-600 dark:text-muted-foreground dark:hover:text-foreground transition-colors"
           >
             <span>Details</span>
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-0.5" />

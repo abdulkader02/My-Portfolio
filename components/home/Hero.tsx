@@ -34,7 +34,7 @@ export function Hero() {
             </h1>
 
             {/* Bio Introduction */}
-            <p className="mt-6 mb-8 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-6 mb-8 max-w-xl text-base sm:text-lg leading-relaxed text-slate-600 dark:text-muted-foreground">
               A full-stack developer passionate about building fast, accessible, and responsive digital products. Welcome to my portfolio.
             </p>
 
@@ -42,14 +42,14 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/resume"
-                className="group inline-flex items-center gap-2.5 rounded-full bg-foreground px-7 py-3.5 text-sm sm:text-base font-semibold text-background shadow-md transition-all duration-200 hover:opacity-90 active:scale-95"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-foreground px-7 py-3.5 text-sm sm:text-base font-semibold text-background shadow-sm transition-all duration-200 hover:bg-blue-600 hover:text-white dark:hover:bg-foreground/90 dark:hover:text-background active:scale-95"
               >
                 <span>View Resume</span>
                 <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center rounded-full border border-border/80 bg-background px-7 py-3.5 text-sm sm:text-base font-semibold text-foreground shadow-2xs transition-colors duration-200 hover:bg-muted/60 active:scale-95"
+                className="inline-flex items-center rounded-full border border-border bg-card px-7 py-3.5 text-sm sm:text-base font-semibold text-foreground shadow-2xs transition-colors duration-200 hover:bg-slate-100 hover:border-slate-300 dark:bg-background dark:border-border/80 dark:hover:bg-muted/60 active:scale-95"
               >
                 Let&apos;s Talk
               </Link>
@@ -58,7 +58,7 @@ export function Hero() {
 
           {/* Right Column: Clean Circular Portrait Cutout */}
           <div className="flex justify-center lg:col-span-5 lg:justify-end">
-            <div className="relative aspect-square w-72 sm:w-84 md:w-96 lg:w-[410px] overflow-hidden rounded-full shadow-[0_25px_60px_-15px_rgba(0,0,0,0.18)] dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] ring-1 ring-border/30">
+            <div className="relative aspect-square w-72 sm:w-84 md:w-96 lg:w-[410px] overflow-hidden rounded-full shadow-[0_20px_50px_-15px_rgba(0,0,0,0.12)] dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] ring-1 ring-border/80 dark:ring-border/30">
               <Image
                 src={profileData.portrait}
                 alt={profileData.name}

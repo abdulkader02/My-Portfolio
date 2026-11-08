@@ -22,7 +22,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
         <div>
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-foreground dark:text-muted-foreground transition-colors"
           >
             <ArrowLeft className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-1" />
             <span>Back to all projects</span>
@@ -40,7 +40,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
             {project.title}
           </h1>
 
-          <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="max-w-3xl text-base leading-relaxed text-slate-600 dark:text-muted-foreground sm:text-lg">
             {project.description}
           </p>
         </header>
@@ -52,13 +52,13 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background shadow-sm hover:opacity-90 active:scale-95 transition-all"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background shadow-xs hover:bg-blue-600 hover:text-white dark:hover:bg-foreground/90 active:scale-95 transition-all"
             >
               <span>Visit Live Website</span>
               <ExternalLink className="h-4 w-4" />
             </a>
           ) : (
-            <span className="rounded-full border border-border px-4 py-2.5 text-xs font-medium text-muted-foreground bg-muted/30">
+            <span className="rounded-full border border-border px-4 py-2.5 text-xs font-medium text-slate-500 bg-slate-100 dark:bg-muted/30 dark:text-muted-foreground">
               Live URL Pending Deployment
             </span>
           )}
@@ -68,13 +68,13 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground shadow-2xs hover:bg-muted active:scale-95 transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-2xs hover:bg-slate-100 hover:border-slate-300 dark:bg-background dark:hover:bg-muted active:scale-95 transition-colors"
             >
               <GithubIcon className="h-4 w-4" />
               <span>View Source Code</span>
             </a>
           ) : (
-            <span className="rounded-full border border-border px-4 py-2.5 text-xs font-medium text-muted-foreground bg-muted/30">
+            <span className="rounded-full border border-border px-4 py-2.5 text-xs font-medium text-slate-500 bg-slate-100 dark:bg-muted/30 dark:text-muted-foreground">
               Repository: Private / Pending
             </span>
           )}
@@ -83,7 +83,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
 
       {/* 2. Full-Resolution Screenshot Hero Showcase */}
       {project.thumbnail && (
-        <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-border/80 bg-muted/20 shadow-xl">
+        <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-border bg-slate-100 shadow-xl dark:border-border/80 dark:bg-muted/20">
           <Image
             src={project.thumbnail}
             alt={`${project.title} detailed interface showcase`}
@@ -102,13 +102,13 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
           {/* Project Overview */}
           {project.overview && (
             <section className="space-y-4">
-              <div className="flex items-center gap-2 border-b border-border/60 pb-3">
+              <div className="flex items-center gap-2 border-b border-border pb-3">
                 <Globe className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                 <h2 className="font-heading text-xl font-bold tracking-tight text-foreground sm:text-2xl">
                   Project Overview
                 </h2>
               </div>
-              <p className="text-base leading-relaxed text-muted-foreground">
+              <p className="text-base leading-relaxed text-slate-600 dark:text-muted-foreground">
                 {project.overview}
               </p>
             </section>
@@ -117,7 +117,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
           {/* Key Features */}
           {project.features.length > 0 && (
             <section className="space-y-4">
-              <div className="flex items-center gap-2 border-b border-border/60 pb-3">
+              <div className="flex items-center gap-2 border-b border-border pb-3">
                 <CheckCircle2 className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                 <h2 className="font-heading text-xl font-bold tracking-tight text-foreground sm:text-2xl">
                   Key Features &amp; Architecture
@@ -127,7 +127,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                 {project.features.map((feature, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-3 rounded-xl border border-border/60 bg-card/60 p-4 transition-colors hover:border-border"
+                    className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-colors hover:border-slate-300 dark:border-border/60 dark:bg-card/60 dark:hover:border-border"
                   >
                     <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400">
                       <CheckCircle2 className="h-3.5 w-3.5" />
@@ -145,7 +145,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
         {/* Right Column: Technologies & Meta */}
         <aside className="space-y-6 lg:col-span-4">
           {/* Tech Stack Box */}
-          <div className="rounded-2xl border border-border/80 bg-card/60 p-6 backdrop-blur-xs space-y-4">
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-4 dark:border-border/80 dark:bg-card/60">
             <div className="flex items-center gap-2">
               <Code2 className="h-5 w-5 text-blue-600 dark:text-blue-400" />
               <h3 className="font-heading text-lg font-bold text-foreground">
@@ -162,7 +162,7 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                   return (
                     <span
                       key={tech}
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-border/70 bg-muted/40 px-3 py-1.5 text-xs font-medium text-foreground"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-slate-100 px-3 py-1.5 text-xs font-medium text-slate-800 dark:border-border/70 dark:bg-muted/40 dark:text-foreground"
                     >
                       {IconComp && (
                         <IconComp
@@ -178,28 +178,28 @@ export function ProjectDetails({ project }: ProjectDetailsProps) {
                 })}
               </div>
             ) : (
-              <p className="text-xs italic text-muted-foreground">
+              <p className="text-xs italic text-slate-500 dark:text-muted-foreground">
                 Technologies pending catalog confirmation.
               </p>
             )}
           </div>
 
           {/* Project Quick Facts */}
-          <div className="rounded-2xl border border-border/80 bg-card/60 p-6 backdrop-blur-xs space-y-3 text-xs">
-            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-muted-foreground">
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-xs space-y-3 text-xs dark:border-border/80 dark:bg-card/60">
+            <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-muted-foreground">
               Project Meta
             </h3>
             <div className="space-y-2">
-              <div className="flex justify-between border-b border-border/50 py-1.5">
-                <span className="text-muted-foreground">Role:</span>
+              <div className="flex justify-between border-b border-border py-1.5">
+                <span className="text-slate-500 dark:text-muted-foreground">Role:</span>
                 <span className="font-medium text-foreground">Full-Stack Implementation</span>
               </div>
-              <div className="flex justify-between border-b border-border/50 py-1.5">
-                <span className="text-muted-foreground">Category:</span>
+              <div className="flex justify-between border-b border-border py-1.5">
+                <span className="text-slate-500 dark:text-muted-foreground">Category:</span>
                 <span className="font-medium text-foreground">{project.category}</span>
               </div>
               <div className="flex justify-between py-1.5">
-                <span className="text-muted-foreground">Deployment:</span>
+                <span className="text-slate-500 dark:text-muted-foreground">Deployment:</span>
                 <span className="font-medium text-foreground">Vercel / Netlify</span>
               </div>
             </div>

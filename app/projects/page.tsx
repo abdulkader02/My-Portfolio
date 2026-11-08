@@ -23,7 +23,7 @@ export default function ProjectsPage() {
         <h1 className="font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
           Projects
         </h1>
-        <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p className="max-w-2xl text-base leading-relaxed text-slate-600 dark:text-muted-foreground sm:text-lg">
           A showcase of real-world web applications built from scratch. Each project represents hands-on experience with modern frontend interfaces, state management, and full-stack integration.
         </p>
       </header>

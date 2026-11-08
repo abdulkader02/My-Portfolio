@@ -64,5 +64,5 @@ export const siteLinks: SiteLinks = {
     resume: "/resume",
     contact: "/contact",
   },
-  cvPdfPath: "/Abdul-Kader-CV.pdf",
+  cvPdfPath: "/Resume.pdf",
 };

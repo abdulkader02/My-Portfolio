@@ -17,7 +17,7 @@ export function SocialLinks({ className = "" }: { className?: string }) {
           href={siteLinks.github.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          className="text-slate-600 hover:text-blue-600 dark:text-muted-foreground dark:hover:text-foreground transition-colors"
           aria-label="GitHub Profile"
         >
           <GithubIcon className="h-5 w-5" />
@@ -29,7 +29,7 @@ export function SocialLinks({ className = "" }: { className?: string }) {
           href={siteLinks.linkedin.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          className="text-slate-600 hover:text-blue-600 dark:text-muted-foreground dark:hover:text-foreground transition-colors"
           aria-label="LinkedIn Profile"
         >
           <LinkedinIcon className="h-5 w-5" />
@@ -39,7 +39,7 @@ export function SocialLinks({ className = "" }: { className?: string }) {
       {siteLinks.email.email ? (
         <a
           href={`mailto:${siteLinks.email.email}`}
-          className="text-muted-foreground transition-colors hover:text-foreground"
+          className="text-slate-600 hover:text-blue-600 dark:text-muted-foreground dark:hover:text-foreground transition-colors"
           aria-label="Send Email"
         >
           <Mail className="h-5 w-5" />
