@@ -29,7 +29,7 @@ export default function ResumePage() {
       {/* 1. Header */}
       <header className="space-y-4">
         <span className="inline-block text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-500">
-          Curriculum Vitae &bull; Professional Summary
+          MY PROFESSIONAL PROFILE
         </span>
         <h1 className="font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
           Resume

@@ -45,7 +45,7 @@ export function Navbar() {
           <Image
             src="/images/profile/logo-dark.png"
             alt="Abdul Kader Logo"
-            width={95}
+            width={75}
             height={40}
             priority
             className="h-8 sm:h-9 w-auto object-contain dark:hidden"
